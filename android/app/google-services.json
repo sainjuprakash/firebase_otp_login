@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344870039778",
+    "project_id": "phone-login-cf604",
+    "storage_bucket": "phone-login-cf604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344870039778:android:d35b5e329bb25a3c5ceebb",
+        "android_client_info": {
+          "package_name": "com.example.otp_login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf-GZJXyLoG832N2BVChoJaIotMtaxrfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
