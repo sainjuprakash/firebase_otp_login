@@ -147,21 +147,44 @@ class _OtpInputPageState extends State<OtpInputPage> {
               }),
             ),
             const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                final otpCode = getOtpCode();
-                //  AuthRepo.submitOtp(context, otpCode);
-                if (otpCode.length == 6) {
-                  // Handle OTP verification
-                  AuthRepo.submitOtp(context, otpCode);
-                  print("Entered OTP: $otpCode");
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Please enter all 6 digits")),
-                  );
-                }
-              },
-              child: const Text("Verify OTP"),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8),
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: TextButton(
+                  onPressed: () {
+                    final otpCode = getOtpCode();
+                    //  AuthRepo.submitOtp(context, otpCode);
+                    if (otpCode.length == 6) {
+                      // Handle OTP verification
+                      AuthRepo.submitOtp(context, otpCode);
+                      print("Entered OTP: $otpCode");
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text("Please enter all 6 digits")),
+                      );
+                    }
+                  },
+                  style: TextButton.styleFrom(
+                      //elevation: 3.0,
+                      backgroundColor: const Color(0xFF313131),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(35))),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                    child: Text(
+                      'Send OTP',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
